@@ -25,16 +25,11 @@ if(isset($_GET['articles_list']) && !empty($_GET['articles_list'])) {
             $articles[$article] = $articles[$article] + 1;
 
         } else {
-
-            if(isset($_GET["supprimer"])){
-                $articles[$article] = $articles[$article] - 1;
-              
-
-            }
+            
+            // $articles[$article] = 1;
 
         }
 
-       
     }
 
     // On le sauvegarde
@@ -43,7 +38,6 @@ if(isset($_GET['articles_list']) && !empty($_GET['articles_list'])) {
     print_r($articles);
 
 }
-
 
 /**
  * AFFICHAGE
@@ -98,29 +92,25 @@ if(isset($_GET['articles_list']) && !empty($_GET['articles_list'])) {
 
         <hr>
 
-        <form action="" method="$_GET">
+        <form action="" method="get">
 
             <?php if(isset($_SESSION['articles'])) { ?>
 
                 <ul>
                     <?php foreach ($_SESSION['articles'] as $name=>$quantite) { ?>
-                        <li>:
-                            <?php echo $name;  ?> : <?php echo $quantite; ?>
-                            <input type="submit" class="btn btn-danger" name="supprimer" value="-">
+                        <li>
+                            <?php echo $name;  ?> - <?php echo $quantite; ?>
+                            <input type="submit" class="btn btn-danger" name="<?php echo $name;  ?>" value="-">
                             <input type="submit" class="btn btn-success" name="<?php echo $name;  ?>" value="+">
                         </li>
-                    <?php   
-               
-                } ?>
+                    <?php } ?>
                 </ul>
 
             <?php } else { ?>
 
                 <h3>Bro, on a pas d'articles...</h3>
 
-            <?php } ;
-          
-             ?>
+            <?php } ?>
 
         </form>
 

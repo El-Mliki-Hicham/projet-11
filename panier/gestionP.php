@@ -35,7 +35,7 @@ class GestionP{
 
 
     public function afficherPanier($id){
-        $SelctRow = "SELECT * FROM produits WHERE id =$id",array();
+        $SelctRow = "SELECT * FROM produits WHERE id =$id";
         $query = mysqli_query($this->getConnection() ,$SelctRow);
         $produits_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
