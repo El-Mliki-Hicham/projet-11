@@ -1,11 +1,12 @@
 <?php 
 session_start();
 
-include 'class-panier.php';
+include 'class/class-panier.php';
 
 $panier = new Panier('produits');
 
 $listProduits = $panier->getPanier();
+
 
 ?>
 
@@ -14,7 +15,7 @@ $listProduits = $panier->getPanier();
     <p>le panier est vide</p>
     <?php }else{ ?>
 
-        <table border="2" width="30%">
+        <table border="2" width="50%" >
              <tr>
                 <th>id</th>
                 <th>Nom</th>
@@ -25,13 +26,13 @@ $listProduits = $panier->getPanier();
       
         <?php  foreach($listProduits as $value){ ?>
           
-            <tr>
+            <tr >
                 
                 <td><?= $value["id"] ?></td>
                 <td><?= $value["nom"] ?></td>
-                <td><?= $value["prix"] ?></td>
+                <td><?= $value["prix"] ?> dh</td>
                 <td><?= $value["qnt"] ?></td>
-                <td><a href="afficher.php?id=<?= $value["id"] ?>">modifier</a>
+                <td><a href="modifier.php?id=<?= $value["id"] ?>">modifier</a>
                --<a href="supprimer.php?id=<?= $value["id"] ?>">supprimer</a></td>
            
             </tr> 

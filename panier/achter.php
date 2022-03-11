@@ -1,7 +1,7 @@
 <?php  
 
 
-include 'gestionPanier.php';
+include 'class/gestionPanier.php';
 
 
 if(isset($_GET["id"])){
@@ -12,10 +12,10 @@ $gestion = new GestionP();
 $data = $gestion->afficherProduit($id);
 
 foreach($data as $value){
-
-    echo $value->getNom();
-    echo $value->getPrix();
-    
+?>
+   <h1><?= $value->getNom();?></h1>
+   <p> Prix:<?= $value->getPrix();?></p>
+   <?php 
 }
 ?>
 

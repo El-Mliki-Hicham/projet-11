@@ -12,7 +12,13 @@ class Panier{
         $_SESSION["paniers"][$this->name][$key] = $value ;
 
     }
-   
+
+    public function get($key){
+        if(isset($_SESSION["paniers"][$this->name][$key])){
+            return $_SESSION["paniers"][$this->name][$key];
+            return null ; 
+        }
+    }
     public function delete($key){
         if(isset($_SESSION["paniers"][$this->name][$key])){
             unset($_SESSION["paniers"][$this->name][$key]);
