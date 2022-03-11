@@ -20,6 +20,7 @@ $listProduits = $panier->getPanier();
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Quantité</th>
+                <th>action</th>
              </tr>
       
         <?php  foreach($listProduits as $value){ ?>
@@ -30,7 +31,8 @@ $listProduits = $panier->getPanier();
                 <td><?= $value["nom"] ?></td>
                 <td><?= $value["prix"] ?></td>
                 <td><?= $value["qnt"] ?></td>
-                
+                <td><a href="afficher.php?id=<?= $value["id"] ?>">modifier</a>
+               --<a href="supprimer.php?id=<?= $value["id"] ?>">supprimer</a></td>
            
             </tr> 
             

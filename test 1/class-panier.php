@@ -3,7 +3,7 @@
 class Panier{
 
     public $name ;
-    private static $nbPaniers = 0 ;
+    
 
     public function __construct($name){
         $this->name = $name ;
@@ -12,12 +12,7 @@ class Panier{
         $_SESSION["paniers"][$this->name][$key] = $value ;
 
     }
-    public function get($key){
-        if(isset($_SESSION["paniers"][$this->name][$key])){
-            return $_SESSION["paniers"][$this->name][$key];
-            return null ; 
-        }
-    }
+   
     public function delete($key){
         if(isset($_SESSION["paniers"][$this->name][$key])){
             unset($_SESSION["paniers"][$this->name][$key]);
