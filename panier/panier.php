@@ -46,6 +46,6 @@ $listProduits = $panier->getPanier();
 
      <a href="index.php">back</a>
 
-     <a href="commande.php">achter</a>
+     <a href="commande/ajoute-commande.php">achter</a>
 
      

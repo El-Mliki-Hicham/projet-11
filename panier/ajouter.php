@@ -27,6 +27,6 @@ $valeurs = array(
 $panier->set( $_POST["id"], $valeurs);
 
 
-header("location:panier.php");
+header("location: panier.php");
 
 

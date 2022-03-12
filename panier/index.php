@@ -1,6 +1,6 @@
 
 <?php 
-include 'class/gestionPanier.php';
+include './class/gestionPanier.php';
 $gestion =new GestionP();
 $data=$gestion->afficher();
 
