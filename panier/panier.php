@@ -43,4 +43,9 @@ $listProduits = $panier->getPanier();
 
      </table>
 
+
      <a href="index.php">back</a>
+
+     <a href="commande.php">achter</a>
+
+     
