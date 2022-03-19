@@ -6,7 +6,7 @@ include 'class/class-panier.php';
 $panier = new Panier('produits');
 
 $listProduits = $panier->getPanier();
-
+$total = 0;
 
 ?>
 
@@ -21,10 +21,17 @@ $listProduits = $panier->getPanier();
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Quantité</th>
+                <th>Cost</th>
                 <th>action</th>
              </tr>
       
-        <?php  foreach($listProduits as $value){ ?>
+        <?php
+          foreach($listProduits as $value){
+            
+           $cost= $value["prix"]*$value["qnt"];
+            $total = $total + $cost;   
+
+            ?>
           
             <tr >
                 
@@ -32,8 +39,9 @@ $listProduits = $panier->getPanier();
                 <td><?= $value["nom"] ?></td>
                 <td><?= $value["prix"] ?> dh</td>
                 <td><?= $value["qnt"] ?></td>
+                <td><?= $cost ."dh";?></td>
                 <td><a href="modifier.php?id=<?= $value["id"] ?>">modifier</a>
-               --<a href="supprimer.php?id=<?= $value["id"] ?>">supprimer</a></td>
+                 <a href="supprimer.php?id=<?= $value["id"] ?>">supprimer</a></td>
            
             </tr> 
             
@@ -43,6 +51,13 @@ $listProduits = $panier->getPanier();
 
      </table>
 
+     <table>  
+         <tr>      
+            <th>total :  </th>
+            <td><?= $total ."dh";?></td>
+            
+            </tr>
+     </table>
 
      <a href="index.php">back</a>
 
