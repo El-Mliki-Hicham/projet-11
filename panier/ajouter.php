@@ -15,7 +15,7 @@ $panier = new Panier('produits');
 
 $data = $gestion->afficherPanier($id);
 
-foreach($data as $value){}
+foreach($data as $value);
 
 
 $valeurs = array(
