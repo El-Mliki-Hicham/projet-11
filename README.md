@@ -1,4 +1,4 @@
-# email avec xampp :
+# counfiguration email (xampp) :
 
  Trouvez [sendmail] : 
  
