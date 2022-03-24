@@ -6,9 +6,6 @@ $data= $gestionProduit->afficher();
 
 foreach($data as $value){
 
-
-   
-
 ?>
 
 <div>
