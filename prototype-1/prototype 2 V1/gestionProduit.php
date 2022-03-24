@@ -42,7 +42,7 @@ class GestionProduit {
 
 // afficher  les produits : page index
     public function afficher(){
-        $SelctRow = 'SELECT * FROM produits';
+        $SelctRow = 'SELECT *  FROM produits';
         $query = mysqli_query($this->getConnection() ,$SelctRow);
         $produits_data = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
@@ -51,7 +51,6 @@ class GestionProduit {
             $produit = new Produit();
             $produit->setId($value_Data['id']);
             $produit->setNom($value_Data['Nom']);
-            $produit->setPrix($value_Data['Prix']);
            
             array_push($TableData, $produit);
         }
@@ -71,9 +70,9 @@ class GestionProduit {
             $TableData = array();
             foreach ($produits_data as $value) {
                 $produit = new Produit();
-        
+                $produit->setId($value['id']);
                 $produit->setNom($value['Nom']);
-   
+                $produit->setPrix($value['Prix']);
                
                 array_push($TableData, $produit);
             }

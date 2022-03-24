@@ -5,17 +5,12 @@ session_start();
 
 include 'gestionProduit.php';
 
-$panier = new GestionProduit();
+$gestionProduit = new GestionProduit();
 
-$listProduits = $panier->getPanier();
+$listProduits = $gestionProduit->getPanier();
 
 
 ?>
-
-
-<?php if(!$listProduits){ ?>
-    <p>le panier est vide</p>
-    <?php }else{ ?>
 
         <table border="2" width="50%" >
              <tr>
@@ -43,7 +38,7 @@ $listProduits = $panier->getPanier();
             </tr> 
             
              
-        <?php }} ?>
+        <?php } ?>
 
 
      </table>
@@ -52,6 +47,5 @@ $listProduits = $panier->getPanier();
 
      <a href="index.php">back</a>
 
-     <a href="commande/ajoute-commande.php">achter</a>
 
      
