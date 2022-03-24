@@ -18,6 +18,7 @@ $listProduits = $gestionProduit->getPanier();
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Quantité</th>
+                <th>Action</th>
                 
              </tr>
       
@@ -33,6 +34,11 @@ $listProduits = $gestionProduit->getPanier();
                 <td><?= $value["nom"] ?></td>
                 <td><?= $value["prix"] ?> dh</td>
                 <td><?= $value["qnt"] ?></td>
+                <td>
+                  <a href="modifier.php?id=<?= $value["id"] ?>">modifier</a>
+                  <a href="supprimer.php?id=<?= $value["id"] ?>">supprimer</a>
+                 </td>
+
             
               
             </tr> 

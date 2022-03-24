@@ -2,12 +2,6 @@
 session_start();
 include 'gestionProduit.php';
 $gestionProduit = new GestionProduit();
-
-
-
-
-
-
 $id=$_POST['id'];
 
 

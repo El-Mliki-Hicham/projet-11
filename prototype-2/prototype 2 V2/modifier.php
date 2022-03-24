@@ -1,14 +1,11 @@
 <?php  
 session_start();
 
-include 'gestionPanier.php';
+include 'gestionProduit.php';
 
-
-include 'class-panier.php';
-
-$panier = new Panier('produits');
-
-$value = $panier->get($_GET["id"]);
+$gestion = new GestionProduit;
+$id = $_GET["id"];
+$value = $gestion->getProduit($_GET["id"]);
 
 ?>
 
@@ -19,10 +16,10 @@ $value = $panier->get($_GET["id"]);
 <form action="ajouter.php" method="POST">
 <p>
 <label for=""> Quntite</label>
-<input type="number" name="qnt" value="<?=  $value["qnt"] ?>">
+<input type="number" name="qnt" value="<?=$value["qnt"] ?>">
 </p>
 <p>
-<input type="hidden" name="id" value="<?=  $value["id"] ?>">
+<input type="hidden" name="id" value="<?=$value["id"] ?>">
 <button type="submit">ajouter au panier</button>
 </p>
 </form>

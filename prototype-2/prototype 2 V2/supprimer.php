@@ -1,10 +1,8 @@
 <?php
 session_start();
-include 'gestionPanier.php';
-include 'class-panier.php';
-$gestion = new GestionP ;
-$panier = new Panier('produits');
+include 'gestionProduit.php';
+$gestion = new GestionProduit ;
 
 
-$panier->delete( $_GET["id"]);
+$gestion->delete($_GET["id"]);
 header('location:panier.php');

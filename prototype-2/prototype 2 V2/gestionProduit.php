@@ -39,15 +39,25 @@ class GestionProduit {
             return array();
         }
 
-         //supprimer session
+      }
+
+          //supprimer session
     public function delete($id){
         if(isset($_SESSION["paniers"]["produits"][$id])){
             unset($_SESSION["paniers"]["produits"][$id]);
         }
-        
-    
-
     }
+
+    
+    // pour afficher  session 
+    public function getProduit($id){
+        if(isset($_SESSION["paniers"]["produits"][$id])){
+            return $_SESSION["paniers"]["produits"][$id];
+            return null ; 
+        }
+    }
+
+  
 
 // afficher  les produits : page index
     public function afficher(){
