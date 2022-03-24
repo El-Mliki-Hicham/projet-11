@@ -38,6 +38,15 @@ class GestionProduit {
             return $_SESSION["paniers"]["produits"];
             return array();
         }
+
+         //supprimer session
+    public function delete($id){
+        if(isset($_SESSION["paniers"]["produits"][$id])){
+            unset($_SESSION["paniers"]["produits"][$id]);
+        }
+        
+    
+
     }
 
 // afficher  les produits : page index
@@ -51,7 +60,6 @@ class GestionProduit {
             $produit = new Produit();
             $produit->setId($value_Data['id']);
             $produit->setNom($value_Data['Nom']);
-            $produit->setPrix($value_Data['Prix']);
            
             array_push($TableData, $produit);
         }

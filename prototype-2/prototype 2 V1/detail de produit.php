@@ -22,7 +22,7 @@ foreach($data as $value){
 <form action="ajouter.php" method="POST">
 <p>
 <label for=""> Quntite</label>
-<input type="number" name="qnt" >
+<input type="number" name="qnt" value="1" >
 </p>
 <p>
 <input type="hidden" name="id" value="<?=  $value->getId() ?>">

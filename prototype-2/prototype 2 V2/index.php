@@ -1,13 +1,10 @@
 
 <?php 
-include 'gestionPanier.php';
-$gestion =new GestionP();
-$data=$gestion->afficher();
+include 'gestionProduit.php';
+$gestionProduit = new GestionProduit();
+$data= $gestionProduit->afficher();
 
 foreach($data as $value){
-
-
-   
 
 ?>
 
@@ -15,7 +12,9 @@ foreach($data as $value){
 <table border="1" width="20%">
 <tr>
 
-<td><a href="detail de produit.php?id=<?= $value->getId();?>"><?= $value->getNom();?></a> </td>
+<td>
+    <a href="detail de produit.php?id=<?= $value->getId();?>">
+<?= $value->getNom();?></a> </td>
 </tr>
 
 
