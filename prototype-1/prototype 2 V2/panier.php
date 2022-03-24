@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include 'class/class-panier.php';
+include 'class-panier.php';
 
 $panier = new Panier('produits');
 

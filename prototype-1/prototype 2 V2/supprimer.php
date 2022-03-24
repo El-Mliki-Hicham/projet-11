@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'class/gestionPanier.php';
-include 'class/class-panier.php';
+include 'gestionPanier.php';
+include 'class-panier.php';
 $gestion = new GestionP ;
 $panier = new Panier('produits');
 

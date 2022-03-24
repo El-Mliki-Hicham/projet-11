@@ -1,7 +1,7 @@
 <?php  
 
 
-include 'class/gestionPanier.php';
+include 'gestionPanier.php';
 
 
 if(isset($_GET["id"])){

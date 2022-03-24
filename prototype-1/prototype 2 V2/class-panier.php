@@ -8,7 +8,6 @@ class Panier{
     public function __construct($name){
         $this->name = $name ;
     }
-
     // pour ajouter session
     public function set($key,$value){
         $_SESSION["paniers"][$this->name][$key] = $value ;

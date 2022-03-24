@@ -1,10 +1,10 @@
 <?php  
 session_start();
 
-include 'class/gestionPanier.php';
+include 'gestionPanier.php';
 
 
-include 'class/class-panier.php';
+include 'class-panier.php';
 
 $panier = new Panier('produits');
 
