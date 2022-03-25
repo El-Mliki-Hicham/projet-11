@@ -67,18 +67,19 @@ foreach($data as $value){
                         </div>
                         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
                         <div class="d-flex">
-                        <form  class="" action="ajouter.php" method="POST">
-                          <p>
+                         <form  class="" action="ajouter.php" method="POST">
+                            <p>
                           <label for="btn btn-outline-dark flex-shrink-0"> Quantite</label>
-                          <input type="number" name="quantite" value="1" >
+                          <input type="number" name="qnt" value="1" >
                            </p>
-                        <p>
-                           <input type="hidden" name="id" value="<?=  $value->getId() ?>">
+                          
+                           <p><input type="hidden" name="id" value="<?= $value->getId() ?>">
                             
                             <button class="btn btn-outline-dark flex-shrink-0" type="submit" >
                                 <i class="bi-cart-fill me-1"></i> ajouter au panier  </button>
                            
                             </p>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -87,32 +88,3 @@ foreach($data as $value){
 </html>
 
 
-
-
-<?php  
-include 'gestionProduit.php';
-
-if(isset($_GET["id"])){
-$id=$_GET["id"];
-
-}
-$gestion = new GestionProduit();
-$data = $gestion->afficherProduit($id);
-foreach($data as $value){
-?>
-   <h1><?= $value->getNom();?></h1>
-   <p> Prix:<?= $value->getPrix();?></p>
-   <?php 
-}
-?>
-
-<form action="ajouter.php" method="POST">
-<p>
-<label for=""> Quantite</label>
-<input type="number" name="quantite" value="1" >
-</p>
-<p>
-<input type="hidden" name="id" value="<?=  $value->getId() ?>">
-<button type="submit">ajouter au panier</button>
-</p>
-</form>

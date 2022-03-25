@@ -10,7 +10,7 @@ foreach($data as $value);
 $valeurs = array(
     "nom" => $value->getNom(),
     'prix' => $value->getPrix(),
-    'quantite' => $_POST["quantite"] ,
+    'qnt' => $_POST["qnt"] ,
     'id' => $value->getId(),
 );
 $gestionProduit->set( $_POST["id"], $valeurs);
