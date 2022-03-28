@@ -46,10 +46,30 @@
                 </div>
             </div>
         </header>
+</body>
+    
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<main>
+
 <script>
+
+load_panier();
+
+function load_panier()
+{
+    $.ajax({
+   url:"page-produit.php",
+   method:"POST",
+   success:function(data)
+   {
+    $('main').html(data);
+   }    
+  });
+}
+</script>
+<!-- <script>
 
 load_panier();
 
@@ -63,5 +83,5 @@ function load_panier()
     $('body').html(data);
    }
   });
-}
+} -->
 </script>
